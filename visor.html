@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" id="favicon-logo" href="img/logopng2.png">
+    <title>Catálogo - Monse Artículos Personalizados</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Tu hoja de estilos personalizada -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- PDF.js de Mozilla -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            user-select: none;
+            overflow: hidden;
+            transition: font-size 0.3s ease;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+        }
+        
+        body.font-large {
+            font-size: 1.25rem !important;
+        }
+        body.font-large .btn, 
+        body.font-large .dropdown-item, 
+        body.font-large .badge {
+            font-size: 1.1rem !important;
+        }
+
+        .toolbar {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            padding: 8px 12px;
+            flex-shrink: 0;
+        }
+        
+        .viewer-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            overflow: auto;
+            width: 100%;
+            height: calc(100vh - 65px);
+        }
+        
+        #pdfCanvas {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 6px;
+            background-color: #ffffff;
+            display: none;
+        }
+        
+        #loadingSpinner {
+            text-align: center;
+        }
+        
+        #errorMessage {
+            display: none;
+            max-width: 450px;
+        }
+
+        @media (max-width: 768px) {
+            .toolbar {
+                font-size: 0.85rem;
+            }
+            .btn-sm {
+                padding: 0.25rem 0.4rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de control superior optimizada y responsiva -->
+    <header class="toolbar shadow-sm">
+        <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center gap-2">
+            
+            <!-- Título / Logo Dinámico -->
+            <div class="d-flex align-items-center gap-2">
+                <img id="navbar-logo" src="img/logopng2.png" alt="Logo Monse" width="30" height="30" class="rounded-circle">
+                <span class="fw-bold text-primary fs-6 fs-md-5 text-truncate" style="max-width: 160px;">
+                    Catálogo Monse
+                </span>
+            </div>
+
+            <!-- Controles de Navegación Compactos con Inicio y Final -->
+            <div class="d-flex align-items-center gap-1 gap-md-2">
+                <button id="firstBtn" class="btn btn-outline-secondary btn-sm" title="Ir al Inicio"><i class="bi bi-chevron-double-left"></i><span class="d-none d-sm-inline ms-1">Inicio</span></button>
+                <button id="prevBtn" class="btn btn-outline-secondary btn-sm"><i class="bi bi-chevron-left"></i><span class="d-none d-sm-inline ms-1">Anterior</span></button>
+                
+                <span class="badge bg-secondary px-2 py-2 fs-6">
+                    <span id="pageNum">1</span> / <span id="pageCount">--</span>
+                </span>
+                
+                <button id="nextBtn" class="btn btn-outline-secondary btn-sm"><span class="d-none d-sm-inline me-1">Siguiente</span><i class="bi bi-chevron-right"></i></button>
+                <button id="lastBtn" class="btn btn-outline-secondary btn-sm" title="Ir al Final"><span class="d-none d-sm-inline me-1">Final</span><i class="bi bi-chevron-double-right"></i></button>
+            </div>
+
+            <!-- Ajustes y Cierre -->
+            <div class="d-flex align-items-center gap-1">
+                <!-- Menú Desplegable de Ajustes -->
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-gear-fill"></i><span class="d-none d-lg-inline ms-1">Ajustes</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow">
+                        <li><h6 class="dropdown-header">Ajustes de Lectura</h6></li>
+                        <li>
+                            <button class="dropdown-item d-flex align-items-center justify-content-between" id="btn-toggle-font">
+                                <span><i class="bi bi-fonts me-2"></i>Tamaño de fuente</span>
+                                <span class="badge bg-secondary ms-2" id="font-size-label">Normal</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item d-flex align-items-center justify-content-between" id="btn-toggle-theme">
+                                <span><i class="bi bi-sun-fill me-2" id="theme-icon"></i>Modo Claro</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón de Cerrar -->
+                <button onclick="window.close()" class="btn btn-sm btn-danger px-2" title="Cerrar pestaña"><i class="bi bi-x-lg"></i></button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ÁREA DE VISUALIZACIÓN DE PDF -->
+    <div class="viewer-container">
+        
+        <!-- Estado 1: Cargando -->
+        <div id="loadingSpinner">
+            <div class="spinner-border text-primary mb-3" style="width: 3rem; height: 3rem;" role="status"></div>
+            <p class="text-muted small">Cargando catálogo...</p>
+        </div>
+
+        <!-- Estado 2: Error -->
+        <div id="errorMessage" class="alert alert-danger text-center shadow p-3">
+            <i class="bi bi-exclamation-triangle-fill fs-2 d-block mb-2"></i>
+            <h5 class="fw-bold fs-6">No se pudo cargar el catálogo</h5>
+            <p id="errorText" class="small mb-3">Error al intentar leer el archivo PDF.</p>
+            <button onclick="location.reload()" class="btn btn-sm btn-outline-danger me-2">Reintentar</button>
+            <a href="CATALOGOF.pdf" target="_blank" class="btn btn-sm btn-danger">Abrir PDF directo</a>
+        </div>
+
+        <!-- Estado 3: PDF Renderizado -->
+        <canvas id="pdfCanvas"></canvas>
+    </div>
+
+    <!-- Scripts Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Lógica JavaScript del Visor -->
+    <script>
+        // ==========================================
+        // 1. AJUSTES (MODO CLARO/OSCURO Y FUENTE)
+        // ==========================================
+        const themeBtn = document.getElementById('btn-toggle-theme');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlTag = document.documentElement;
+        const navbarLogo = document.getElementById('navbar-logo');
+        const faviconLogo = document.getElementById('favicon-logo');
+
+        function updateLogos(theme) {
+            if (theme === 'dark') {
+                navbarLogo.src = 'img/logopng1.png';
+                faviconLogo.href = 'img/logopng1.png';
+                themeIcon.className = 'bi bi-sun-fill me-2';
+                themeBtn.querySelector('span:nth-child(1)').innerHTML = '<i class="bi bi-sun-fill me-2" id="theme-icon"></i>Modo Claro';
+            } else {
+                navbarLogo.src = 'img/logopng2.png';
+                faviconLogo.href = 'img/logopng2.png';
+                themeIcon.className = 'bi bi-moon-stars me-2';
+                themeBtn.querySelector('span:nth-child(1)').innerHTML = '<i class="bi bi-moon-stars me-2" id="theme-icon"></i>Modo Oscuro';
+            }
+        }
+
+        // Inicializar estado por defecto (Oscuro)
+        updateLogos('dark');
+
+        themeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentTheme = htmlTag.getAttribute('data-bs-theme');
+            if (currentTheme === 'dark') {
+                htmlTag.setAttribute('data-bs-theme', 'light');
+                updateLogos('light');
+            } else {
+                htmlTag.setAttribute('data-bs-theme', 'dark');
+                updateLogos('dark');
+            }
+        });
+
+        const fontBtn = document.getElementById('btn-toggle-font');
+        const fontLabel = document.getElementById('font-size-label');
+
+        fontBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (document.body.classList.contains('font-large')) {
+                document.body.classList.remove('font-large');
+                fontLabel.textContent = 'Normal';
+            } else {
+                document.body.classList.add('font-large');
+                fontLabel.textContent = 'Grande';
+            }
+        });
+
+        // ==========================================
+        // 2. LÓGICA DE PDF.JS ADAPTATIVA AUTOMÁTICA
+        // ==========================================
+        const pdfPath = 'CATALOGOF.pdf';
+
+        let pdfDoc = null,
+            pageNum = 1,
+            pageRendering = false,
+            pageNumPending = null,
+            canvas = document.getElementById('pdfCanvas'),
+            ctx = canvas.getContext('2d');
+
+        if (typeof pdfjsLib !== 'undefined') {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        }
+
+        function showError(msg) {
+            document.getElementById('loadingSpinner').style.display = 'none';
+            canvas.style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'block';
+            document.getElementById('errorText').innerText = msg;
+        }
+
+        if (typeof pdfjsLib === 'undefined') {
+            showError('No se pudo conectar con la librería del visor (PDF.js).');
+        } else {
+            pdfjsLib.getDocument(pdfPath).promise.then(function(pdfDoc_) {
+                pdfDoc = pdfDoc_;
+                document.getElementById('pageCount').textContent = pdfDoc.numPages;
+                
+                document.getElementById('loadingSpinner').style.display = 'none';
+                canvas.style.display = 'block';
+                
+                renderPage(pageNum);
+            }).catch(function(err) {
+                console.error('Error al cargar PDF:', err);
+                if (window.location.protocol === 'file:') {
+                    showError('Estás abriendo el archivo localmente (file://). Usa "Live Server" en VS Code.');
+                } else {
+                    showError('No se encontró el archivo "' + pdfPath + '". Revisa que esté en la misma carpeta.');
+                }
+            });
+        }
+
+        function renderPage(num) {
+            pageRendering = true;
+            pdfDoc.getPage(num).then(function(page) {
+                const container = document.querySelector('.viewer-container');
+                const unscaledViewport = page.getViewport({ scale: 1.0 });
+                
+                const hScale = (container.clientHeight - 20) / unscaledViewport.height;
+                const wScale = (container.clientWidth - 20) / unscaledViewport.width;
+                const dynamicScale = Math.min(hScale, wScale);
+
+                let viewport = page.getViewport({ scale: dynamicScale > 0 ? dynamicScale : 1.3 });
+                
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                let renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                let renderTask = page.render(renderContext);
+
+                renderTask.promise.then(function() {
+                    pageRendering = false;
+                    if (pageNumPending !== null) {
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
+                });
+            });
+            document.getElementById('pageNum').textContent = num;
+        }
+
+        function queueRenderPage(num) {
+            if (pageRendering) {
+                pageNumPending = num;
+            } else {
+                renderPage(num);
+            }
+        }
+
+        // ==========================================
+        // 3. NAVEGACIÓN COMPLETA
+        // ==========================================
+        document.getElementById('firstBtn').addEventListener('click', function() {
+            if (!pdfDoc || pageNum === 1) return;
+            pageNum = 1;
+            queueRenderPage(pageNum);
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', function() {
+            if (pageNum <= 1) return;
+            pageNum--;
+            queueRenderPage(pageNum);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', function() {
+            if (!pdfDoc || pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            queueRenderPage(pageNum);
+        });
+
+        document.getElementById('lastBtn').addEventListener('click', function() {
+            if (!pdfDoc || pageNum === pdfDoc.numPages) return;
+            pageNum = pdfDoc.numPages;
+            queueRenderPage(pageNum);
+        });
+
+        window.addEventListener('resize', function() {
+            if (pdfDoc) {
+                renderPage(pageNum);
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (!pdfDoc) return;
+            if (e.key === 'ArrowRight' || e.key === 'Space') {
+                if (pageNum < pdfDoc.numPages) { pageNum++; queueRenderPage(pageNum); }
+            } else if (e.key === 'ArrowLeft') {
+                if (pageNum > 1) { pageNum--; queueRenderPage(pageNum); }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+/* ==========================================================================
+   1. VARIABLES DE COLOR (PALETA DE COLORES Y TEMA)
+   ========================================================================== */
+:root {
+  /* Fondo general y contenedores */
+  --bg-main: #f1f3ff;            /* Fondo claro de la página */
+  --bg-card: #f3feff;            /* Fondo de tarjetas y elementos destacados */
+  --bg-secondary: #daf1f3;       /* Fondo alternativo para secciones */
+  
+  /* Textos */
+  --text-primary: #2a3a55;        /* Texto principal */
+  --text-muted: #64748B;          /* Texto secundario */
+  
+  /* Colores Destacados */
+  --color-primary: #003566;       /* Azul Oscuro Principal */
+  --color-teal: #2EC4B6;           /* Verde Agua / Turquesa */
+  --color-purple: #7B2CBF;        /* Morado */
+  --color-lavender: #B8B8FF;      /* Lavanda */
+  
+  /* Bordes y Sombras */
+  --border-color: #E2E8F0;
+  --shadow-sm: 0 0.125rem 0.25rem rgba(44, 3, 49, 0.075);
+}
+
+/* Modo Oscuro */
+[data-bs-theme="dark"] {
+  --bg-main: #0B0F19;            
+  --bg-card: #151C2C;            
+  --bg-secondary: #1E293B;       
+  
+  --text-primary: #F1F5F9;       
+  --text-muted: #94A3B8;          
+  
+  --color-primary: #38BDF8;       
+  --color-teal: #2EC4B6;           
+  --color-purple: #B8B8FF;        
+  --color-lavender: #312E81;      
+  
+  --border-color: #334155;
+  --shadow-sm: 0 0.125rem 0.25rem rgba(47, 2, 61, 0.5);
+}
+
+/* Ajuste de Fuente Grande */
+body.font-large {
+  font-size: 1.15rem;
+}
+
+/* ==========================================================================
+   2. ESTILOS GENERALES
+   ========================================================================== */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Adaptación de tarjetas a las variables */
+.card {
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Secciones secundarias */
+.bg-body-tertiary {
+  background-color: var(--bg-secondary) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+/* Botón Principal */
+.btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #FFFFFF !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-teal) !important;
+  border-color: var(--color-teal) !important;
+  color: #000000 !important;
+}
+
+/* Pestañas / Tabs Activas */
+.nav-pills .nav-link.active {
+  background-color: var(--color-primary) !important;
+  color: #FFFFFF !important;
+}
+
+.nav-pills .nav-link {
+  color: var(--text-primary);
+}
+
+/* Badges / Etiquetas */
+.badge.bg-secondary {
+  background-color: var(--color-purple) !important;
+  color: #FFFFFF !important;
+}
+
+/* ==========================================
+   3. ANIMACIONES Y TRANSICIONES DINÁMICAS
+   ========================================== */
+a, button, .btn, .card {
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.carousel-item img {
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.03);
+}
+
+.dropdown-menu {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.navbar-nav .nav-link:not(.dropdown-toggle) {
+    transition: transform 0.25s ease-in-out, color 0.25s ease-in-out;
+    display: inline-block;
+}
+
+.navbar-nav .nav-link:not(.dropdown-toggle):hover {
+    transform: scale(1.12);
+    color: #0d6efd !important;
+}
+
+.navbar-nav .nav-link.active:not(.dropdown-toggle),
+.navbar-nav .nav-link:not(.dropdown-toggle):active {
+    transform: scale(1.12);
+    color: #0a58ca !important;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   4. CORRECCIONES DE IMÁGENES Y RESPONSIVE
+   ========================================================================== */
+
+/* Carrusel: En celulares desplaza la imagen completamente a la izquierda */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 260px !important;
+        object-position: left center !important;
+    }
+}
+
+/* Sección: Nuestros Servicios (Tarjetas horizontales) */
+#servicios .card img {
+    height: 100% !important;
+    min-height: 140px;
+    max-height: 180px;
+    object-fit: cover !important;
+}
+
+/* Sección: Soluciones por Evento (Tarjetas verticales superiores) */
+#servicios .row-cols-md-3 .card-img-top {
+    height: 170px !important;
+    object-fit: cover !important;
+}
+
+/* Sección: Nuestros Proyectos (Galería de pestañas) */
+#proyectos .tab-pane .card img {
+    height: 200px !important;
+    object-fit: cover !important;
+}
+
+/* ==========================================================================
+   5. AJUSTES DE COLORES (CARRUSEL, FONDOS Y FOOTER)
+   ========================================================================== */
+
+/* Títulos del Carrusel (Gris azulado blancusco brillante) */
+.carousel-caption h2 {
+    color: #c3d2e6 !important;
+}
+
+/* Modo Oscuro: Unificar fondo del carrusel y footer con el gris azulado medio (#1E293B) */
+[data-bs-theme="dark"] .carousel-caption.bg-dark {
+    background-color: rgba(30, 41, 59, 0.75) !important; /* Ajusta el último valor (0.75) de 0 a 1 para más o menos transparencia */
+    backdrop-filter: blur(4px); /* Efecto difuminado elegante opcional para el fondo */
+    border-radius: 0.5rem;
+}
+
+[data-bs-theme="dark"] footer.bg-dark {
+    background-color: #0B0F19 !important;
+}
+
+/* Modo Claro: Footer con el azul oscuro principal para mantener hegemonía */
+[data-bs-theme="light"] footer.bg-dark {
+    background-color: var(--bg-main) !important;
+    color: #FFFFFF !important;
+}
+/* Color azul de los títulos para el copyright solo en modo claro (dejando el fondo del footer original) */
+[data-bs-theme="light"] footer .footer-copyright {
+    color: var(--color-primary) !important;
+    font-weight: 600;
+}
+/* Campos de texto del formulario en modo oscuro con el tono gris azulado (#151C2C / #1E293B) */
+[data-bs-theme="dark"] #form-whatsapp .form-control {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Efecto al hacer clic / escribir en los campos en modo oscuro */
+[data-bs-theme="dark"] #form-whatsapp .form-control:focus {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25) !important;
+}
