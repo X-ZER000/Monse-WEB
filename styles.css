@@ -54,6 +54,13 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+#navbar-logo {
+    height: 45px;      
+    width: auto;        
+    border-radius: 0;   
+    object-fit: contain;
+}
+
 /* Adaptación de tarjetas a las variables */
 .card {
   background-color: var(--bg-card) !important;
