@@ -87,23 +87,30 @@
                 <button type="button" data-bs-target="#carrusel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carrusel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
+            
+            <!-- Capa de Animación de Bienvenida del Logo (Única vez por sesión) -->
+            <div id="welcome-logo-overlay" class="welcome-overlay">
+                <div class="welcome-logo-container">
+                    <img src="img/logopng1.png" alt="Monse Logo Bienvenida" class="welcome-animated-logo shadow-lg">
+                </div>
+            </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/calusel.jpg" class="d-block w-100" style="height: 420px; object-fit: cover;" alt="impresión 3D">
+                    <img src="img/calusel.jpg" class="d-block w-100" style="height: 420px; object-fit: cover;" alt="impresión 3D" loading="lazy">
                     <div class="carousel-caption bg-dark bg-opacity-50 p-2 p-md-4 rounded mb-2 mb-md-0">
                         <h2 class="fs-6 fs-md-2 fw-bold mb-1">Crea tus Ideas en 3D y Más</h2>
                         <a href="#servicios" class="btn btn-primary btn-sm btn-md-lg py-1 px-2 py-md-2 px-md-3">Conoce más</a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="img/regalospsd.jpg" class="d-block w-100" style="height: 420px; object-fit: cover;" alt="Soluciones para Eventos">
+                    <img src="img/regalospsd.jpg" class="d-block w-100" style="height: 420px; object-fit: cover;" alt="Soluciones para Eventos" loading="lazy">
                     <div class="carousel-caption bg-dark bg-opacity-50 p-2 p-md-4 rounded mb-2 mb-md-0">
                         <h2 class="fs-6 fs-md-2 fw-bold mb-1">Regalos y Eventos Especiales</h2>
                         <a href="#proyectos" class="btn btn-primary btn-sm btn-md-lg py-1 px-2 py-md-2 px-md-3">Ver catálogo</a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="img/trabajoj.jpg" class="d-block w-100" style="height: 420px; object-fit: cover;" alt="Soluciones para empresas">
+                    <img src="img/trabajoj.jpg" class="d-block w-100" style="height: 420px; object-fit: cover;" alt="Soluciones para empresas" loading="lazy">
                     <div class="carousel-caption bg-dark bg-opacity-50 p-2 p-md-4 rounded mb-2 mb-md-0">
                         <h2 class="fs-6 fs-md-2 fw-bold mb-1">Sublimación e impresión 3D para tu negocio.</h2>
                         <a href="#contactanos" class="btn btn-primary btn-sm btn-md-lg py-1 px-2 py-md-2 px-md-3">Cotizar ahora</a>
@@ -118,6 +125,13 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Siguiente</span>
             </button>
+
+            
+            <!-- Lightbox Modal Dinámico -->
+            <div id="projectLightbox" class="lightbox-modal">
+                <span class="lightbox-close">&times;</span>
+                <img class="lightbox-content" id="lightboxImage" alt="Proyecto Ampliado">
+            </div>
         </article>
 
         <!-- Nuestros Servicios -->
@@ -133,7 +147,7 @@
                     <div class="card h-100 shadow-sm">
                         <div class="row g-0 align-items-center h-100">
                             <div class="col-4">
-                                <img src="img/3D7.jpeg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Modelado 3D">
+                                <img src="img/3D7.jpeg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Modelado 3D" loading="lazy">
                             </div>
                             <div class="col-8">
                                 <div class="card-body">
@@ -154,7 +168,7 @@
                     <div class="card h-100 shadow-sm">
                         <div class="row g-0 align-items-center h-100">
                             <div class="col-4">
-                                <img src="img/sublimado.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Sublimación">
+                                <img src="img/sublimado.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Sublimación" loading="lazy">
                             </div>
                             <div class="col-8">
                                 <div class="card-body">
@@ -182,7 +196,7 @@
                     <!-- Tarjeta 1 -->
                     <div class="col">
                         <div class="card h-100 shadow-sm text-center">
-                            <img src="img/Fest.jpg" class="card-img-top" style="height: 180px; object-fit: cover;" alt="Actividades y Eventos">
+                            <img src="img/Fest.jpg" class="card-img-top" style="height: 180px; object-fit: cover;" alt="Actividades y Eventos" loading="lazy">
                             <div class="card-body d-flex flex-column">
                                 <h4 class="card-title h5">Actividades y Eventos</h4>
                                 <p class="card-text text-muted small">Variedad de opciones para tus festividades y momentos especiales.</p>
@@ -200,7 +214,7 @@
                     <!-- Tarjeta 2 -->
                     <div class="col">
                         <div class="card h-100 shadow-sm text-center">
-                            <img src="img/gift.jpg" class="card-img-top" style="height: 180px; object-fit: cover;" alt="Regalos">
+                            <img src="img/gift.jpg" class="card-img-top" style="height: 180px; object-fit: cover;" alt="Regalos" loading="lazy">
                             <div class="card-body d-flex flex-column">
                                 <h4 class="card-title h5">Regalos Únicos</h4>
                                 <p class="card-text text-muted small">Los detalles ideales para sorprender a tus seres queridos.</p>
@@ -218,7 +232,7 @@
                     <!-- Tarjeta 3 -->
                     <div class="col">
                         <div class="card h-100 shadow-sm text-center">
-                            <img src="img/empre.jpg" class="card-img-top" style="height: 180px; object-fit: cover;" alt="Empleos y Empresas">
+                            <img src="img/empre.jpg" class="card-img-top" style="height: 180px; object-fit: cover;" alt="Empleos y Empresas" loading="lazy">
                             <div class="card-body d-flex flex-column">
                                 <h4 class="card-title h5">Empleos y Empresas</h4>
                                 <p class="card-text text-muted small">Potencia la imagen corporativa de tu negocio o marca.</p>
@@ -305,7 +319,7 @@
                             <div class="card h-100 shadow-sm border-0">
                                 <div class="card-body text-start">
                                     <div class="d-flex align-items-center mb-3">
-                                        <img src="img/Manfred.png" class="rounded-circle object-fit-cover me-3" width="70" height="70" alt="Manfred Jiménez">
+                                        <img src="img/Manfred.png" class="rounded-circle object-fit-cover me-3" width="70" height="70" alt="Manfred Jiménez" loading="lazy">
                                         <div>
                                             <h5 class="card-title h6 fw-bold mb-1">Manfred Jiménez</h5>
                                             <div class="text-warning small">
@@ -327,7 +341,7 @@
                             <div class="card h-100 shadow-sm border-0">
                                 <div class="card-body text-start">
                                     <div class="d-flex align-items-center mb-3">
-                                        <img src="img/Eidi.png" class="rounded-circle object-fit-cover me-3" width="70" height="70" alt="Eidi Mora">
+                                        <img src="img/Eidi.png" class="rounded-circle object-fit-cover me-3" width="70" height="70" alt="Eidi Mora" loading="lazy">
                                         <div>
                                             <h5 class="card-title h6 fw-bold mb-1">Eidi Mora</h5>
                                             <div class="text-warning small">
@@ -349,7 +363,7 @@
                             <div class="card h-100 shadow-sm border-0">
                                 <div class="card-body text-start">
                                     <div class="d-flex align-items-center mb-3">
-                                        <img src="img/Ejemplo_Imagen.jpg" class="rounded-circle object-fit-cover me-3" width="70" height="70" alt="Iliana Céspedes">
+                                        <img src="img/Ejemplo_Imagen.jpg" class="rounded-circle object-fit-cover me-3" width="70" height="70" alt="Iliana Céspedes" loading="lazy">
                                         <div>
                                             <h5 class="card-title h6 fw-bold mb-1">Iliana Céspedes</h5>
                                             <div class="text-warning small">
@@ -391,23 +405,23 @@
                 <!-- Pestaña Modelado 3D -->
                 <div class="tab-pane fade show active" id="pills-3d" role="tabpanel">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-                        <div class="col"><div class="card shadow-sm"><img src="img/3D3.jpeg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto 3D 1"></div></div>
-                        <div class="col"><div class="card shadow-sm"><img src="img/3D11.jpeg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto 3D 2"></div></div>
-                        <div class="col"><div class="card shadow-sm"><img src="img/3D4.jpeg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto 3D 3"></div></div>
-                        <div class="col"><div class="card shadow-sm"><img src="img/3D13.jpeg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto 3D 3"></div></div>
-                        <div class="col"><div class="card shadow-sm"><img src="img/3D10.jpeg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto 3D 3"></div></div>
-                        <div class="col"><div class="card shadow-sm"><img src="img/3D12.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto 3D 3"></div></div>
+                        <div class="col"><div class="card shadow-sm"><img src="img/3D3.jpeg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto 3D 1" loading="lazy"></div></div>
+                        <div class="col"><div class="card shadow-sm"><img src="img/3D11.jpeg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto 3D 2" loading="lazy"></div></div>
+                        <div class="col"><div class="card shadow-sm"><img src="img/3D4.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto 3D 3" loading="lazy"></div></div>
+                        <div class="col"><div class="card shadow-sm"><img src="img/3D13.jpeg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto 3D 3" loading="lazy"></div></div>
+                        <div class="col"><div class="card shadow-sm"><img src="img/3D10.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto 3D 3" loading="lazy"></div></div>
+                        <div class="col"><div class="card shadow-sm"><img src="img/3D12.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto 3D 3" loading="lazy"></div></div>
                     </div>
                 </div>
                 <!-- Pestaña Sublimación -->
                 <div class="tab-pane fade" id="pills-sublimacion" role="tabpanel">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-                        <div class="col"><div class="card shadow-sm"><img src="img/sublimado.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto Sublimación 1"></div></div>
-                        <div class="col"><div class="card shadow-sm"><img src="img/sublimado2.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto Sublimación 2"></div></div>
-                        <div class="col"><div class="card shadow-sm"><img src="img/sublimado3.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto Sublimación 3"></div></div>
-                        <div class="col"><div class="card shadow-sm"><img src="img/sublimado4.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto Sublimación 3"></div></div>
-                        <div class="col"><div class="card shadow-sm"><img src="img/sublimado5.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto Sublimación 3"></div></div>
-                        <div class="col"><div class="card shadow-sm"><img src="img/sublimado6.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto Sublimación 3"></div></div>
+                        <div class="col"><div class="card shadow-sm"><img src="img/sublimado.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto Sublimación 1" loading="lazy"></div></div>
+                        <div class="col"><div class="card shadow-sm"><img src="img/sublimado2.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto Sublimación 2" loading="lazy"></div></div>
+                        <div class="col"><div class="card shadow-sm"><img src="img/sublimado3.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto Sublimación 3" loading="lazy"></div></div>
+                        <div class="col"><div class="card shadow-sm"><img src="img/sublimado4.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto Sublimación 3" loading="lazy"></div></div>
+                        <div class="col"><div class="card shadow-sm"><img src="img/sublimado5.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto Sublimación 3" loading="lazy"></div></div>
+                        <div class="col"><div class="card shadow-sm"><img src="img/sublimado6.jpg" class="card-img-top object-fit-cover" style="height: 220px;" alt="Proyecto Sublimación 3" loading="lazy"></div></div>
                     </div>
                 </div>
 
@@ -543,11 +557,77 @@
             const mensaje = document.getElementById('inputMensaje').value;
 
             const numeroDestino = "50687632905";
-            const texto = `Hola, mi nombre es ${nombre} (${telefono}). Tienen el siguiente mensaje: ${mensaje}`;
+            const texto = `Hola, mi nombre es ${nombre} (${telefono}). Quisiera consultar lo siguiente: ${mensaje}`;
             const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(texto)}`;
 
             window.open(url, '_blank');
         });
+
+        // ==========================================
+    // LIGHTBOX INTERACTIVO PARA LA GALERÍA
+    // ==========================================
+    document.addEventListener('DOMContentLoaded', function() {
+        const lightbox = document.getElementById('projectLightbox');
+        const lightboxImg = document.getElementById('lightboxImage');
+        const closeBtn = document.querySelector('.lightbox-close');
+
+        // Seleccionamos todas las imágenes dentro de la sección de proyectos
+        const projectImages = document.querySelectorAll('#proyectos .tab-pane img');
+
+        projectImages.forEach(img => {
+            // Añadimos un cursor de lupa o pointer para indicar que se pueden tocar
+            img.style.cursor = 'pointer';
+
+            img.addEventListener('click', function() {
+                lightbox.classList.add('show');
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+            });
+        });
+
+        // Función para cerrar el lightbox
+        function closeLightbox() {
+            lightbox.classList.remove('show');
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+
+        // Cerrar también si hacen clic fuera de la imagen (en el fondo oscuro)
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Cerrar con la tecla Escape del teclado
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    });
+
+    // ==========================================
+    // ANIMACIÓN DE BIENVENIDA (CRECER Y ENCOGER)
+    // ==========================================
+    document.addEventListener('DOMContentLoaded', function() {
+        const welcomeOverlay = document.getElementById('welcome-logo-overlay');
+
+        if (sessionStorage.getItem('monseWelcomeShown')) {
+            if (welcomeOverlay) {
+                welcomeOverlay.remove();
+            }
+        } else {
+            sessionStorage.setItem('monseWelcomeShown', 'true');
+
+            setTimeout(() => {
+                if (welcomeOverlay) {
+                    welcomeOverlay.classList.add('fade-out');
+                    welcomeOverlay.remove();
+                }
+            }, 3000);
+        }
+    });
     </script>
 </body>
 </html>

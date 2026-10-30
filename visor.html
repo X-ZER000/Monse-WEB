@@ -92,7 +92,7 @@
             
             <!-- Título / Logo Dinámico -->
             <div class="d-flex align-items-center gap-2">
-                <img id="navbar-logo" src="img/logopng2.png" alt="Logo Monse" width="30" height="30" class="rounded-circle">
+                <img id="navbar-logo" src="img/logopng1.png" alt="Logo Monse" width="30" height="30" class="rounded-circle">
                 <span class="fw-bold text-primary fs-6 fs-md-5 text-truncate" style="max-width: 160px;">
                     Catálogo Monse
                 </span>
@@ -156,7 +156,7 @@
             <h5 class="fw-bold fs-6">No se pudo cargar el catálogo</h5>
             <p id="errorText" class="small mb-3">Error al intentar leer el archivo PDF.</p>
             <button onclick="location.reload()" class="btn btn-sm btn-outline-danger me-2">Reintentar</button>
-            <a href="CATALOGOF.pdf" target="_blank" class="btn btn-sm btn-danger">Abrir PDF directo</a>
+            <a href="CATALOGO.pdf" target="_blank" class="btn btn-sm btn-danger">Abrir PDF directo</a>
         </div>
 
         <!-- Estado 3: PDF Renderizado -->
@@ -223,7 +223,7 @@
         // ==========================================
         // 2. LÓGICA DE PDF.JS ADAPTATIVA AUTOMÁTICA
         // ==========================================
-        const pdfPath = 'CATALOGOF.pdf';
+        const pdfPath = 'CATALOGO.pdf';
 
         let pdfDoc = null,
             pageNum = 1,
@@ -270,12 +270,27 @@
                 const container = document.querySelector('.viewer-container');
                 const unscaledViewport = page.getViewport({ scale: 1.0 });
                 
+                // 1. Cálculo correcto de escala adaptativa al contenedor (con un margen de 20px)
                 const hScale = (container.clientHeight - 20) / unscaledViewport.height;
                 const wScale = (container.clientWidth - 20) / unscaledViewport.width;
-                const dynamicScale = Math.min(hScale, wScale);
-
-                let viewport = page.getViewport({ scale: dynamicScale > 0 ? dynamicScale : 1.3 });
+                let dynamicScale = Math.min(hScale, wScale);
                 
+                // Fallback por seguridad si el contenedor aún no mide bien
+                if (isNaN(dynamicScale) || dynamicScale <= 0) {
+                    dynamicScale = 1.3;
+                }
+
+                // 2. EL FRENO DE MANO DE LA VELOCIDAD (Límite máximo de escala)
+                // Evita que renderice resoluciones gigantescas innecesarias en pantallas grandes,
+                // haciendo que la carga sea súper fluida incluso con internet medio lento.
+                const MAX_SCALE = 1.5;
+                if (dynamicScale > MAX_SCALE) {
+                    dynamicScale = MAX_SCALE;
+                }
+
+                let viewport = page.getViewport({ scale: dynamicScale });
+                
+                // Asignamos dimensiones limpias al canvas
                 canvas.height = viewport.height;
                 canvas.width = viewport.width;
 
@@ -283,6 +298,7 @@
                     canvasContext: ctx,
                     viewport: viewport
                 };
+                
                 let renderTask = page.render(renderContext);
 
                 renderTask.promise.then(function() {

@@ -235,3 +235,132 @@ a, button, .btn, .card {
     border-color: var(--color-primary) !important;
     box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25) !important;
 }
+
+/* ==========================================================================
+   ESTILOS PARA EL LIGHTBOX DE PROYECTOS
+   ========================================================================== */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(11, 15, 25, 0.9); /* Fondo oscuro elegante */
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.lightbox-modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+.lightbox-modal.show .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #f1f5f9;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 10000;
+}
+
+.lightbox-close:hover {
+    color: var(--color-teal);
+}
+
+/* ==========================================================================
+   ANIMACIÓN DE BIENVENIDA: CRECER, MANTENER Y ENCOGER
+   ========================================================================== */
+.welcome-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 15, 25, 0.85); /* Fondo oscuro elegante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0.5s ease;
+}
+
+.welcome-overlay.fade-out {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.welcome-logo-container {
+    text-align: center;
+}
+
+.welcome-animated-logo {
+    width: 140px; /* Tamaño base ligeramente mayor */
+    height: 140px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: var(--bg-card);
+    padding: 12px;
+    border: 2px solid var(--color-teal);
+    animation: logoGrowShrinkAnim 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes logoGrowShrinkAnim {
+    0% {
+        transform: scale(0.2); /* Inicia más pequeño */
+        opacity: 0;
+    }
+    25% {
+        transform: scale(1.6); /* ¡Se hace mucho más grande! */
+        opacity: 1;
+    }
+    40% {
+        transform: scale(1.5); /* Se estabiliza ligeramente en tamaño grande */
+        opacity: 1;
+    }
+    75% {
+        transform: scale(1.5); /* Se mantiene grande unos segundos */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.2); /* Se vuelve a encoger hasta desaparecer */
+        opacity: 0;
+    }
+}
+
+/* Para pantallas grandes: Evitamos que el carrusel recorte la imagen */
+@media (min-width: 1600px) {
+    .carousel-item img {
+        height: 500px !important; /* Altura controlada para pantallas gigantes */
+        object-fit: contain !important; /* Muestra la imagen completa sin recortar nada */
+        background-color: var(--bg-card); /* Rellena los espacios vacíos laterales con el color del tema */
+    }
+}
