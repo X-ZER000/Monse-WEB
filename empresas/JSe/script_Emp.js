@@ -4,9 +4,8 @@
 
 // 1. Imágenes para el Carrusel Principal Superior
 const carouselEmpImages = [
-    "imgE/destacado1.jpg", 
-    "imgE/destacado2.jpg",
-    "imgE/destacado3.jpg"
+    "imgE/Destacado.png", "imgE/destacado2.png","imgE/Destacado3.png",
+    "imgE/Destacado1.png"
 ];
 
 // 2. Datos organizados combinando elementos pequeños y ubicando manteles junto a rótulos
