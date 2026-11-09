@@ -57,10 +57,9 @@ const empresasData = {
         "imgE/Mauspad.png", "imgE/Mouspad.png"
     ],
     rotulos: [
-        "imgE/rotulo1.jpg",
-        "imgE/banner1.jpg",
-        "imgE/mantel1.jpg",
-        "imgE/mantel2.jpg"
+        "imgE/C_Segura.png", "imgE/Mantel1.png", "imgE/Rotu_Abogados.png",
+        "imgE/Rotu_Abogados1.png", "imgE/Mantel2.png", "imgE/C_Monse.png",
+        "imgE/C_Monse1.png"
     ],
     actividades: [
         "imgE/actividad1.jpg"
