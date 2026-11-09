@@ -51,7 +51,7 @@ const empresasData = {
         "imgE/tumbler1.jpg"
     ],
     llaveros: [
-        "imgE/llavero1.jpg"
+        "imgE/Llaveros1.png", "imgE/Llaveros2.png"
     ],
     stickers_Accesorios: [
         "imgE/sticker.png", "imgE/estuche.png", "imgE/Mauspad1.png",
