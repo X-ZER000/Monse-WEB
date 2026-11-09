@@ -38,8 +38,9 @@ const empresasData = {
         "imgE/manga1.jpg"
     ],
     lanyards: [
-        "imgE/gafete.png", "imgE/Cuello2.png", "imgE/Cuello3.png",
-        "imgE/Cuello1.png", "imgE/Cuello4.png", "imgE/Cuello5.png",
+        "imgE/gafete.png", "imgE/Cuello2.png", "imgE/Cro2.png",
+        "imgE/Cuello3.png", "imgE/Cuello1.png", "imgE/Cro.png",
+        "imgE/Cro1.png", "imgE/Cuello4.png", "imgE/Cuello5.png",
         "imgE/Cuello6.png", "imgE/Cuello7.png", "imgE/Cuello8.png"
     ],
     tazas: [
