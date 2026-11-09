@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="light">
+<html lang="es" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +17,13 @@
 </head>
 <body>
 
-    <!-- Navbar Corporativo -->
-    <nav class="navbar navbar-expand-lg shadow-sm sticky-top bg-body-tertiary">
+    <!-- Visor de Imágenes tipo Lightbox -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg shadow-sm sticky-top border-bottom" style="background-color: var(--bg-main) !important; border-color: var(--border-color) !important;">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="../index.html">
                 <div class="d-flex align-items-center gap-2">
@@ -26,13 +31,15 @@
                 </div>
             </a>
             <div class="d-flex align-items-center gap-2">
-                <a href="../index.html" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-left me-1"></i>Volver al Inicio</a>
+                <a href="../index.html" class="btn btn-outline-light btn-sm px-3" style="border-color: var(--color-teal); color: var(--text-primary);">
+                    <i class="bi bi-arrow-left me-1"></i>Volver al Inicio
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Encabezado del Portafolio -->
-    <header class="py-5 bg-body-secondary border-bottom mb-4 text-center">
+    <header class="py-5 bg-body-tertiary border-bottom mb-4 text-center">
         <div class="container">
             <h1 class="fw-bold display-6">Portafolio de Trabajos</h1>
             <p class="text-muted lead mb-0">Recorre nuestra galería de proyectos realizados a lo largo de nuestra trayectoria</p>

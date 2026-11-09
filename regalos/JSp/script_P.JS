@@ -220,7 +220,7 @@ function renderCarousel() {
 }
 
 function renderPortfolioPart1() {
-    const container = document.getElementById('catalog-container');
+    const container = document.getElementById('catalogo-container');
     if (container) {
         container.innerHTML = portfolioPart1Data.map(sec => `
             <div class="mb-5">
@@ -261,7 +261,7 @@ function renderPortfolioPart2() {
         gorrasContainer.innerHTML = gorrasImages.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Gorra ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Gorra ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -272,7 +272,7 @@ function renderPortfolioPart2() {
         bolsosContainer.innerHTML = bolsosImages.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Bolso ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Bolso ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -286,7 +286,7 @@ function renderTextilesVarios() {
         container.innerHTML = textilesVariosImages.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Textil Vario ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Textil Vario ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -302,7 +302,7 @@ function renderTazas() {
         container1.innerHTML = tazasList1.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Taza A ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Taza A ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -312,7 +312,7 @@ function renderTazas() {
         container2.innerHTML = tazasList2.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Taza B ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Taza B ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -328,7 +328,7 @@ function renderTumblers() {
         container1.innerHTML = tumblersList1.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Tumbler ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Tumbler ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -338,7 +338,7 @@ function renderTumblers() {
         container2.innerHTML = tumblersList2.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Botella ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Botella ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -354,7 +354,7 @@ function renderCoctelerasYOtros() {
         coctelerasContainer.innerHTML = coctelerasList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Coctelera/Copa ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Coctelera/Copa ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -364,7 +364,7 @@ function renderCoctelerasYOtros() {
         otrosContainer.innerHTML = otrosRecipientesList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Recipiente ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Recipiente ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -380,7 +380,7 @@ function renderAccesorios() {
         llaverosContainer.innerHTML = llaverosList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Llavero ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Llavero ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -390,7 +390,7 @@ function renderAccesorios() {
         pulserasContainer.innerHTML = pulserasList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Pulsera ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Pulsera ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -407,7 +407,7 @@ function renderSeccionCollaresYHogar() {
         collaresContainer.innerHTML = collaresList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Collar ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Collar ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -417,7 +417,7 @@ function renderSeccionCollaresYHogar() {
         relojesContainer.innerHTML = relojesEspejosList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Reloj/Espejo ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Reloj/Espejo ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -427,7 +427,7 @@ function renderSeccionCollaresYHogar() {
         rompecabezasContainer.innerHTML = rompecabezasList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Rompecabezas/Retablo ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Rompecabezas/Retablo ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -443,7 +443,7 @@ function renderMousepadsYEstuches() {
         mousepadContainer.innerHTML = mousepadsList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Mousepad ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Mousepad ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -453,7 +453,7 @@ function renderMousepadsYEstuches() {
         estuchesContainer.innerHTML = estuchesList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Estuche ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Estuche ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -469,7 +469,7 @@ function renderAlmohadasYBebes() {
         almohadasContainer.innerHTML = almohadasList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Almohada ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Almohada ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -479,7 +479,7 @@ function renderAlmohadasYBebes() {
         bebesContainer.innerHTML = bebesList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Bebé ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Bebé ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -495,7 +495,7 @@ function renderEspinillerasYPlacas() {
         espinillerasContainer.innerHTML = espinillerasList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Espinillera ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Espinillera ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -505,7 +505,7 @@ function renderEspinillerasYPlacas() {
         placasContainer.innerHTML = placasList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Placa ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Placa ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -521,7 +521,7 @@ function renderMascotasYArticulosVarios() {
         mascotasContainer.innerHTML = mascotasList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Mascota ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Mascota ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -531,7 +531,7 @@ function renderMascotasYArticulosVarios() {
         articulosContainer.innerHTML = articulosVariosList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Artículo Vario ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Artículo Vario ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -545,7 +545,7 @@ function renderRegalosEspeciales() {
         regalosContainer.innerHTML = regalosEspecialesList.map((img, i) => `
             <div class="flex-shrink-0" style="width: 200px;">
                 <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Regalo Especial ${i + 1}" loading="lazy">
+                    <img src="${img}" class="card-img-top object-fit-cover" style="height: 200px; cursor: pointer;" alt="Imagen" loading="lazy" onclick="openLightbox('${img}')" alt="Regalo Especial ${i + 1}" loading="lazy">
                 </div>
             </div>
         `).join('');
@@ -583,4 +583,37 @@ document.addEventListener("DOMContentLoaded", () => {
     renderEspinillerasYPlacas();
     renderMascotasYArticulosVarios();
     renderRegalosEspeciales();
+});
+
+// --- FUNCIONES PARA EL LIGHTBOX DE GALERÍA ---
+
+// Función para abrir el visor con la imagen seleccionada
+function openLightbox(imageSrc) {
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImg');
+    if (modal && modalImg) {
+        modal.style.display = "flex";
+        // Pequeño retraso para activar la transición de opacidad
+        setTimeout(() => modal.classList.add('show'), 10);
+        modalImg.src = imageSrc;
+    }
+}
+
+// Función para cerrar el visor
+function closeLightbox(event) {
+    const modal = document.getElementById('lightboxModal');
+    // Si se hace clic en el fondo oscuro o en la X (o se llama directo), se cierra
+    if (modal && (!event || event.target === modal || event.target.classList.contains('lightbox-close'))) {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 300); // Coincide con la duración del CSS
+    }
+}
+
+// Sobrescribimos el cierre al hacer clic fuera de la imagen grande
+document.getElementById('lightboxModal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'lightboxModal') {
+        closeLightbox(e);
+    }
 });

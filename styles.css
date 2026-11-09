@@ -371,4 +371,71 @@ a, button, .btn, .card {
         background-color: var(--bg-card); /* Rellena los espacios vacíos laterales con el color del tema */
     }
 }
-/* Forzar despliegue de pages */
+
+/* Asegurar que las tarjetas del portafolio respeten la paleta del index */
+.card {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Efecto hover elegante para las tarjetas del catálogo horizontal */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Sincronizar el color de los títulos de las subcategorías con el tema */
+#catalog-container h5 {
+    color: var(--text-primary) !important;
+}
+
+/* Ocultar la barra de desplazamiento manteniendo la funcionalidad táctil y de mouse */
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+.scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Botón Volver al Inicio - Efecto Hover y Active con el color celeste/turquesa */
+.btn-outline-light:hover, 
+.btn-outline-light:active, 
+.btn-outline-light:focus {
+    background-color: var(--color-teal) !important;
+    border-color: var(--color-teal) !important;
+    color: #000000 !important;
+}
+
+/* Botones de desplazamiento lateral con el color del encabezado y transparencia */
+.scroll-left-btn, 
+.scroll-right-btn {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    opacity: 0.85 !important; /* Ajusta la transparencia aquí si lo deseas (ej. 0.7 o 0.9) */
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Efecto al pasar el mouse por encima de las flechas */
+.scroll-left-btn:hover, 
+.scroll-right-btn:hover {
+    background-color: var(--color-teal) !important;
+    color: #000000 !important;
+    opacity: 1 !important;
+}
+
+/* Carrusel adaptado: Mantiene la misma escala y proporción del celular en laptops y pantallas grandes */
+@media (min-width: 992px) {
+    #carouselGift {
+        max-width: 800px;                  /* Fija un ancho máximo elegante similar al formato móvil */
+        margin-left: auto;                 /* Centra el carrusel automáticamente a la izquierda */
+        margin-right: auto;                /* Centra el carrusel automáticamente a la derecha */
+    }
+
+    #carouselGift .carousel-item img {
+        height: 550px !important;          /* Altura fija y proporcional al celular */
+        object-fit: cover !important;      /* Rellena de forma idéntica a la vista móvil */
+        border-radius: 0.5rem;             /* Mantiene los bordes redondeados */
+    }
+}
