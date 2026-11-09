@@ -33,7 +33,8 @@ const festividadesData = {
         "imgF/baby13.png"
     ],
     aniversarios: [
-        "imgF/aniv1.jpg"
+        "imgF/Aniversarios1.png", "imgF/Aniversarios2.png", "imgF/Aniversarios3.png",
+        "imgF/Aniversarios4.png"
     ],
     conciertos: [
         "imgF/concierto1.jpg"
