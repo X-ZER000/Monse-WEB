@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Logo-->
+    <link rel="icon" type="image/x-icon" id="favicon-logo" href="../img/logopng1.png">
+    <title>Monse WEB - Portafolio Empresarial e Institucional</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Hoja de Estilos Personalizada -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Librería de Mozilla para PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+
+    <!-- Navbar Corporativo -->
+    <nav class="navbar navbar-expand-lg shadow-sm sticky-top border-bottom" style="background-color: var(--bg-main) !important; border-color: var(--border-color) !important;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <div class="d-flex align-items-center gap-2">
+                    <img id="navbar-logo" src="../img/logopng1.png" alt="Logo Monse" class="d-inline-block align-text-top">
+                </div>
+            </a>
+            <div class="d-flex align-items-center gap-2">
+                <a href="../index.html" class="btn btn-outline-light btn-sm px-3" style="border-color: var(--color-teal); color: var(--text-primary);">
+                    <i class="bi bi-arrow-left me-1"></i>Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado del Portafolio -->
+    <header class="py-5 bg-body-tertiary border-bottom mb-4 text-center">
+        <div class="container">
+            <h1 class="fw-bold display-6">Portafolio Empresarial e Institucional</h1>
+            <p class="text-muted lead mb-0">Soluciones corporativas, indumentaria, señalización y proyectos especiales</p>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        
+        <!-- Carrusel Principal de Destacados de Empresas -->
+        <section class="mb-5">
+            <div id="carouselEmp" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
+                <div class="carousel-inner" id="carousel-inner-container">
+                    <!-- Generado dinámicamente por JS -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselEmp" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselEmp" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Contenedor General de Secciones -->
+        <section id="catalogo-container">
+            
+            <!-- SECCIÓN 1: TEXTILES E INDUMENTARIA CORPORATIVA -->
+            <div class="mb-5">
+                <h3 class="border-bottom pb-2 mb-4 text-primary fw-bold"><i class="bi bi-shirt me-2"></i>Textiles e Indumentaria Corporativa</h3>
+
+                <!-- Uniformes -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Uniformes</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="uniformes-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Uniformes Escolares-->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Uniformes Escolares</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="uniformes_escolares-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Gorras -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Gorras</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="gorras-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Mangas de protección solar -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Mangas de Protección Solar</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="mangas-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: IDENTIFICACIÓN Y CREDENCIALES -->
+            <div class="mb-5">
+                <h3 class="border-bottom pb-2 mb-4 text-primary fw-bold"><i class="bi bi-person-badge-fill me-2"></i>Identificación Institucional</h3>
+
+                <!-- Lanyards y Gafetes juntos -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Lanyards y Gafetes</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="lanyards-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: LÍNEA DE OFICINA Y PROMOCIONALES -->
+            <div class="mb-5">
+                <h3 class="border-bottom pb-2 mb-4 text-primary fw-bold"><i class="bi bi-briefcase-fill me-2"></i>Línea de Oficina y Artículos Promocionales</h3>
+
+                <!-- Tazas -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Tazas</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="tazas-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Botellas y Tumblers juntos -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Botellas y Tumblers</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="botellas_tumblers-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Llaveros -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Llaveros</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="llaveros-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Stickers, Estuches y Mousepads -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Stickers, Estuches y Mousepads</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="stickers_Accesorios-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 4: SEÑALIZACIÓN Y GRAN FORMATO -->
+            <div class="mb-5">
+                <h3 class="border-bottom pb-2 mb-4 text-primary fw-bold"><i class="bi bi-signpost-split-fill me-2"></i>Señalización y Gran Formato</h3>
+
+                <!-- Rotulaciones, Banners y Manteles Sublimados juntos -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Rotulaciones, Banners y Manteles Sublimados</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="rotulos-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 5: EVENTOS, CAMPAÑAS Y ELEMENTOS ESPECIALES -->
+            <div class="mb-5">
+                <h3 class="border-bottom pb-2 mb-4 text-primary fw-bold"><i class="bi bi-star-fill me-2"></i>Eventos, Campañas y Elementos Especiales</h3>
+
+                <!-- Actividades empresariales -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Actividades Empresariales</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="actividades-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Sombrillas -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Sombrillas</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="sombrillas-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Placas y Campaña Política juntos -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Placas y Campaña Política</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="especiales_politica-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Visor de Imágenes tipo Lightbox -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+    </div>
+
+    <!-- Footer Corporativo -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0 small text-muted">&copy; 2026 Monse WEB. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script de Datos y Funcionalidad para Empresas -->
+    <script src="JSe/script_Emp.js"></script>
+
+</body>
+</html>
