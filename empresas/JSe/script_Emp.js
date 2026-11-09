@@ -67,7 +67,12 @@ const empresasData = {
         "imgE/Actv_Empresa4.png", "imgE/Actv_Empresa5.png"
     ],
     sombrillas: [
-        "imgE/sombrilla1.jpg"
+        "imgE/Sm1.png", "imgE/Sm2.png", "imgE/Sm3.png",
+        "imgE/Sm4.png", "imgE/Sm5.png", "imgE/Sm6.png",
+        "imgE/Sm7.png", "imgE/Sm8.png", "imgE/Sm9.png",
+        "imgE/Sm10.png", "imgE/Sm11.png", "imgE/Sm12.png",
+        "imgE/Sm13.png", "imgE/Sm14.png", "imgE/Sm15.png",
+        "imgE/Sm16.png", "imgE/Sm17.png"
     ],
     especiales_politica: [
         "imgE/placa1.jpg",
