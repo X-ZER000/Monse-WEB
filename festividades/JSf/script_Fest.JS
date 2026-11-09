@@ -18,7 +18,7 @@ const festividadesData = {
         "imgF/Cumpleaños10.png"
     ],
     graduaciones: [
-        "imgF/Graduaciones17.png","imgF/Graduacion16.png", "imgF/Graduaciones15.png",
+        "imgF/Graduaciones17.png","imgF/Graduacion16.png", "imgF/graduaciones15.png",
         "imgF/Graduaciones1.png", "imgF/Graduaciones2.png", "imgF/Graduaciones3.png",
         "imgF/Graduaciones4.png", "imgF/Graduaciones5.png", "imgF/Graduaciones6.png",
         "imgF/Graduaciones7.png", "imgF/Graduaciones8.png", "imgF/Graduaciones9.png",
@@ -26,7 +26,11 @@ const festividadesData = {
         "imgF/Graduaciones13.png", "imgF/Graduaciones14.png"
     ],
     babyshower: [
-        "imgF/baby1.jpg"
+        "imgF/baby1.png", "imgF/baby2.png", "imgF/baby3.png",
+        "imgF/baby4.png", "imgF/baby5.png", "imgF/baby6.png",
+        "imgF/baby7.png", "imgF/baby8.png", "imgF/baby9.png",
+        "imgF/baby10.png", "imgF/baby11.png", "imgF/baby12.png",
+        "imgF/baby13.png"
     ],
     aniversarios: [
         "imgF/aniv1.jpg"
