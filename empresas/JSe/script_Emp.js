@@ -63,7 +63,8 @@ const empresasData = {
         "imgE/C_Monse1.png"
     ],
     actividades: [
-        "imgE/actividad1.jpg"
+        "imgE/Actv_Empresa1.png", "imgE/Actv_Empresa2.png", "imgE/Actv_Empresa3.png",
+        "imgE/Actv_Empresa4.png", "imgE/Actv_Empresa5.png"
     ],
     sombrillas: [
         "imgE/sombrilla1.jpg"
