@@ -38,8 +38,9 @@ const empresasData = {
         "imgE/manga1.jpg"
     ],
     lanyards: [
-        "imgE/cinta1.jpg",
-        "imgE/gafete1.jpg"
+        "imgE/gafete.png", "imgE/Cuello2.png", "imgE/Cuello3.png",
+        "imgE/Cuello1.png", "imgE/Cuello4.png", "imgE/Cuello5.png",
+        "imgE/Cuello6.png", "imgE/Cuello7.png", "imgE/Cuello8.png"
     ],
     tazas: [
         "imgE/taza1.jpg"
@@ -53,7 +54,7 @@ const empresasData = {
     ],
     stickers_Accesorios: [
         "imgE/sticker.png", "imgE/estuche.png", "imgE/Mauspad1.png",
-        "imgE/Mauspad.png"
+        "imgE/Mauspad.png", "imgE/Mouspad.png"
     ],
     rotulos: [
         "imgE/rotulo1.jpg",
