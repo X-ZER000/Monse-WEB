@@ -4,20 +4,18 @@
 
 // 1. Imágenes para el Carrusel Principal Superior (Apuntando a imgF/)
 const carouselFestImages = [
-    "imgF/Destacado1.png", 
-    "imgF/destacado2.png",
-    "imgF/destacado3.png",
-    "imgF/Destacado4.png",
-    "imgF/destacado5.png",
-    "imgF/destacado6.png",
+    "imgF/Destacado1.png", "imgF/destacado2.png", "imgF/destacado3.png",
+    "imgF/Destacado4.png", "imgF/destacado5.png", "imgF/destacado6.png",
     "imgF/destacado7.png"
 ];
 
 // 2. Datos e imágenes para cada subcategoría (Apuntando a imgF/)
 const festividadesData = {
     cumpleanos: [
-        "imgF/cumple1.jpg",
-        "imgF/cumple2.jpg"
+        "imgF/Cumpleaños1.png", "imgF/Cumpleaños2.png", "imgF/Cumpleaños3.png",
+        "imgF/Cumpleaños4.png", "imgF/Cumpleaños5.png", "imgF/Cumpleaños6.png", 
+        "imgF/Cumpleaños7.png", "imgF/Cumpleaños8.png", "imgF/Cumpleaños9.png",
+        "imgF/Cumpleaños10.png"
     ],
     graduaciones: [
         "imgF/grad1.jpg",
