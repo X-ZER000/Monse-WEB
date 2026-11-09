@@ -11,8 +11,20 @@ const carouselEmpImages = [
 // 2. Datos organizados combinando elementos pequeños y ubicando manteles junto a rótulos
 const empresasData = {
     uniformes: [
-        "imgE/uniforme1.jpg",
-        "imgE/uniforme2.jpg"
+        "imgE/Uniforme1.png", "imgE/Uniforme2.png", "imgE/Uniforme3.png",
+        "imgE/Uniforme4.png", "imgE/Uniforme5.png", "imgE/Uniforme6.png",
+        "imgE/Uniforme7.png", "imgE/Uniforme8.png", "imgE/Uniforme9.png",
+        "imgE/Uniforme10.png", "imgE/Uniforme11.png", "imgE/Uniforme12.png",
+        "imgE/Uniforme13.png", "imgE/Uniforme14.png", "imgE/Uniforme15.png",
+        "imgE/Uniforme16.png", "imgE/Uniforme17.png", "imgE/Uniforme18.png",
+        "imgE/Uniforme19.png", "imgE/Uniforme20.png", "imgE/Uniforme21.png",
+        "imgE/Uniforme22.png", "imgE/Uniforme23.png", "imgE/Uniforme24.png",
+        "imgE/Uniforme25.png", "imgE/Uniforme26.png", "imgE/Uniforme27.png",
+        "imgE/Uniforme28.png", "imgE/Uniforme29.png", "imgE/Uniforme30.png",
+        "imgE/Uniforme31.png", "imgE/Uniforme32.png", "imgE/Uniforme33.png",
+        "imgE/Uniforme34.png", "imgE/Uniforme35.png", "imgE/Uniforme36.png",
+        "imgE/Uniforme37.png", "imgE/Uniforme38.png", "imgE/Uniforme39.png",
+        "imgE/Uniforme40.png", "imgE/Uniforme41.png", "imgE/Uniforme42.png"
     ],
     uniformes_escolares: [
         "imgE/U_EscuelaAGZ1.png","imgE/U_EscuelaAGZ.png", "imgE/U_EscuelaAGZ3.png",
