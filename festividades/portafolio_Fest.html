@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Logo (Sube un nivel para buscar en la carpeta principal) -->
+    <link rel="icon" type="image/x-icon" id="favicon-logo" href="../img/logopng1.png">
+    <title>Monse WEB - Portafolio de Actividades y Festividades</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Hoja de Estilos Personalizada (Sube un nivel para encontrar styles.css) -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Librería de Mozilla para PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+
+    <!-- Navbar Corporativo -->
+    <nav class="navbar navbar-expand-lg shadow-sm sticky-top border-bottom" style="background-color: var(--bg-main) !important; border-color: var(--border-color) !important;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <div class="d-flex align-items-center gap-2">
+                    <img id="navbar-logo" src="../img/logopng1.png" alt="Logo Monse" class="d-inline-block align-text-top">
+                </div>
+            </a>
+            <div class="d-flex align-items-center gap-2">
+                <a href="../index.html" class="btn btn-outline-light btn-sm px-3" style="border-color: var(--color-teal); color: var(--text-primary);">
+                    <i class="bi bi-arrow-left me-1"></i>Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado del Portafolio -->
+    <header class="py-5 bg-body-secondary border-bottom mb-4 text-center">
+        <div class="container">
+            <h1 class="fw-bold display-6">Portafolio de Actividades y Festividades</h1>
+            <p class="text-muted lead mb-0">Galería de momentos especiales, eventos y celebraciones acompañadas por nosotros</p>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        
+        <!-- Carrusel Principal de Destacados de Festividades -->
+        <section class="mb-5">
+            <div id="carouselFest" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
+                <div class="carousel-inner" id="carousel-inner-container">
+                    <!-- Generado dinámicamente por JS -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFest" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselFest" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Contenedor General de Secciones -->
+        <section id="catalogo-container">
+            
+            <!-- SECCIÓN 1: CELEBRACIONES Y EVENTOS SOCIALES -->
+            <div class="mb-5">
+                <h3 class="border-bottom pb-2 mb-4 text-primary fw-bold"><i class="bi bi-balloon-fill me-2"></i>Celebraciones y Eventos Sociales</h3>
+
+                <!-- Cumpleaños -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Cumpleaños</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="cumpleanos-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Graduaciones -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Graduaciones</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="graduaciones-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Babyshower -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Babyshower</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="babyshower-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Aniversarios -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Aniversarios</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="aniversarios-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: ESPECTÁCULOS Y FESTIVIDADES -->
+            <div class="mb-5">
+                <h3 class="border-bottom pb-2 mb-4 text-primary fw-bold"><i class="bi bi-calendar-event-fill me-2"></i>Espectáculos y Festividades</h3>
+
+                <!-- Conciertos -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Conciertos</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="conciertos-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Festividades -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Festividades</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="festividades-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: REUNIONES, EVENTOS Y TRAYECTORIA -->
+            <div class="mb-5">
+                <h3 class="border-bottom pb-2 mb-4 text-primary fw-bold"><i class="bi bi-people-fill me-2"></i>Reuniones, Eventos y Trayectoria</h3>
+
+                <!-- Eventos y actividades -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Eventos y Actividades</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="eventos-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Reuniones -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Reuniones</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="reuniones-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Reconocimientos -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Reconocimientos</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="reconocimientos-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 4: OTROS MOMENTOS Y DESPEDIDAS -->
+            <div class="mb-5">
+                <h3 class="border-bottom pb-2 mb-4 text-primary fw-bold"><i class="bi bi-heart-pulse-fill me-2"></i>Otros Momentos y Despedidas</h3>
+
+                <!-- Despedidas (Fallecimientos, velorios y similares) -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Despedidas (Velorios y similares)</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="despedidas-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Otros -->
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3 text-secondary">Otros</h5>
+                    <div class="position-relative px-md-4">
+                        <button class="btn position-absolute start-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-left-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-left"></i></button>
+                        <div class="d-flex gap-3 overflow-x-auto pb-3 scroll-container" id="otros-container" style="scroll-behavior: smooth; scrollbar-width: none;"></div>
+                        <button class="btn position-absolute end-0 top-50 translate-middle-y z-3 rounded-circle shadow opacity-75 scroll-right-btn" type="button" style="width: 40px; height: 40px;"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Visor de Imágenes tipo Lightbox -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+    </div>
+
+    <!-- Footer Corporativo -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0 small text-muted">&copy; 2026 Monse WEB. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script de Datos y Funcionalidad (Dentro de la carpeta JSf/) -->
+    <script src="JSf/script_Fest.js"></script>
+
+</body>
+</html>
