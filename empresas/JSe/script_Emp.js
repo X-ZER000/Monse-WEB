@@ -16,8 +16,9 @@ const empresasData = {
         "imgE/uniforme2.jpg"
     ],
     uniformes_escolares: [
-        "imgE/uniforme_escolar1.jpg",
-        "imgE/uniforme_escolar2.jpg"
+        "imgE/U_EscuelaAGZ1.png","imgE/U_EscuelaAGZ.png", "imgE/U_EscuelaAGZ3.png",
+        "imgE/U_EscuelaAngeles.png", "imgE/U_EscuelaERR.png", "imgE/U_EscuelaRACG.png",
+        "imgE/U_EscuelaSBP.png", "imgE/U_EscuelaSE.png"
     ],
     gorras: [
         "imgE/gorra1.jpg"
