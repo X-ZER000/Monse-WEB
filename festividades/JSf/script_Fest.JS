@@ -18,8 +18,12 @@ const festividadesData = {
         "imgF/Cumpleaños10.png"
     ],
     graduaciones: [
-        "imgF/grad1.jpg",
-        "imgF/grad2.jpg"
+        "imgF/Graduaciones17.png","imgF/Graduacion16.png", "imgF/Graduaciones15.png",
+        "imgF/Graduaciones1.png", "imgF/Graduaciones2.png", "imgF/Graduaciones3.png",
+        "imgF/Graduaciones4.png", "imgF/Graduaciones5.png", "imgF/Graduaciones6.png",
+        "imgF/Graduaciones7.png", "imgF/Graduaciones8.png", "imgF/Graduaciones9.png",
+        "imgF/Graduaciones10.png", "imgF/Graduaciones11.png", "imgF/Graduaciones12.png",
+        "imgF/Graduaciones13.png", "imgF/Graduaciones14.png"
     ],
     babyshower: [
         "imgF/baby1.jpg"
