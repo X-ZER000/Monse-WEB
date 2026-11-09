@@ -60,7 +60,10 @@ const festividadesData = {
         "imgF/reuniones10.png"
     ],
     reconocimientos: [
-        "imgF/reconocimiento1.jpg"
+        "imgF/Reconocimientos1.png", "imgF/Reconocimientos2.jpg", "imgF/Reconocimientos3.png",
+        "imgF/Reconocimientos4.png", "imgF/Reconocimientos5.png", "imgF/Reconocimientos6.png",
+        "imgF/Reconocimientos7.png", "imgF/Reconocimientos8.png", "imgF/Reconocimientos9.png",
+        "imgF/Reconocimientos10.png"
     ],
     despedidas: [
         "imgF/despedida1.jpg"
