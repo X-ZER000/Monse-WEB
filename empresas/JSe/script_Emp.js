@@ -44,7 +44,7 @@ const empresasData = {
     tazas: [
         "imgE/taza1.jpg"
     ],
-    botellas_Tumblers: [
+    botellas_tumblers: [
         "imgE/botella1.jpg",
         "imgE/tumbler1.jpg"
     ],
@@ -52,9 +52,8 @@ const empresasData = {
         "imgE/llavero1.jpg"
     ],
     stickers_Accesorios: [
-        "imgE/sticker1.jpg",
-        "imgE/estuche1.jpg",
-        "imgE/mousepad1.jpg"
+        "imgE/sticker.png", "imgE/estuche.png", "imgE/Mauspad1.png",
+        "imgE/Mauspad.png"
     ],
     rotulos: [
         "imgE/rotulo1.jpg",
