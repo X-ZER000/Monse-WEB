@@ -34,7 +34,14 @@ const empresasData = {
         "imgE/U_EscuelaSBP.png", "imgE/U_EscuelaSE.png"
     ],
     gorras: [
-        "imgE/gorra1.jpg"
+        "imgE/gorra23.png", "imgE/gorra2.png", "imgE/gorra3.png",
+        "imgE/gorra4.png", "imgE/gorra5.png", "imgE/gorra6.png",
+        "imgE/gorra7.png", "imgE/gorra8.png", "imgE/gorra9.png",
+        "imgE/gorra10.png", "imgE/gorra11.png", "imgE/gorra12.png",
+        "imgE/gorra13.png", "imgE/gorra14.png", "imgE/gorra15.png",
+        "imgE/gorra16.png", "imgE/gorra17.png", "imgE/gorra18.png",
+        "imgE/gorra19.png", "imgE/gorra20.png", "imgE/gorra21.png",
+        "imgE/gorra22.png", "imgE/gorra1.png"
     ],
     mangas: [
         "imgE/CCSS.png", "imgE/Segura.png"
@@ -79,8 +86,8 @@ const empresasData = {
         "imgE/Sm16.png", "imgE/Sm17.png"
     ],
     campana: [
-        "imgE/campana1.jpg",
-        "imgE/campana2.jpg"
+        "imgE/PPSO1.png", "imgE/PPSO2.png", "imgE/PPSO3.png",
+        "imgE/PPSO.png"
     ]
 };
 
