@@ -53,7 +53,12 @@ const empresasData = {
         "imgE/Cuello6.png", "imgE/Cuello7.png", "imgE/Cuello8.png"
     ],
     tazas: [
-        "imgE/taza1.jpg"
+        "imgE/taza1.png", "imgE/taza2.png", "imgE/taza3.png",
+        "imgE/taza4.png", "imgE/taza5.png", "imgE/taza6.png",
+        "imgE/taza7.png", "imgE/taza8.png", "imgE/taza9.png",
+        "imgE/taza10.png", "imgE/taza11.png", "imgE/taza12.png",
+        "imgE/taza13.png", "imgE/taza14.png", "imgE/taza15.png",
+        "imgE/taza16.png", "imgE/taza17.png", "imgE/taza18.png"
     ],
     botellas_tumblers: [
         "imgE/botella1.jpg",
