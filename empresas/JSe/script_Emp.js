@@ -61,8 +61,11 @@ const empresasData = {
         "imgE/taza16.png", "imgE/taza17.png", "imgE/taza18.png"
     ],
     botellas_tumblers: [
-        "imgE/botella1.jpg",
-        "imgE/tumbler1.jpg"
+        "imgE/bot1.png", "imgE/Tumb1.png", "imgE/Tumb2.png", 
+        "imgE/bot2.png", "imgE/Tumb3.png", "imgE/Tumb4.png", 
+        "imgE/bot3.png", "imgE/Tumb5.png", "imgE/Tumb6.png", 
+        "imgE/bot4.png", "imgE/Tumb7.png", "imgE/Tumb8.png", 
+        "imgE/bot5.png", "imgE/Tumb9.png", "imgE/Tumb10.png"
     ],
     placas_llaveros: [
         "imgE/placa_Bomberos.png",
