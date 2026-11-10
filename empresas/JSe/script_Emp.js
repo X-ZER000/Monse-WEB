@@ -4,11 +4,13 @@
 
 // 1. Imágenes para el Carrusel Principal Superior
 const carouselEmpImages = [
-    "imgE/Destacado.png", "imgE/destacado2.png","imgE/Destacado3.png",
+    "imgE/Destacado.png", 
+    "imgE/destacado2.png",
+    "imgE/Destacado3.png",
     "imgE/Destacado1.png"
 ];
 
-// 2. Datos organizados combinando elementos pequeños y ubicando manteles junto a rótulos
+// 2. Datos organizados (Placas y Llaveros juntos, Campaña al final)
 const empresasData = {
     uniformes: [
         "imgE/Uniforme1.png", "imgE/Uniforme2.png", "imgE/Uniforme3.png",
@@ -27,7 +29,7 @@ const empresasData = {
         "imgE/Uniforme40.png", "imgE/Uniforme41.png", "imgE/Uniforme42.png"
     ],
     uniformes_escolares: [
-        "imgE/U_EscuelaAGZ1.png","imgE/U_EscuelaAGZ.png", "imgE/U_EscuelaAGZ3.png",
+        "imgE/U_EscuelaAGZ1.png", "imgE/U_EscuelaAGZ.png", "imgE/U_EscuelaAGZ3.png",
         "imgE/U_EscuelaAngeles.png", "imgE/U_EscuelaERR.png", "imgE/U_EscuelaRACG.png",
         "imgE/U_EscuelaSBP.png", "imgE/U_EscuelaSE.png"
     ],
@@ -35,7 +37,7 @@ const empresasData = {
         "imgE/gorra1.jpg"
     ],
     mangas: [
-        "imgE/manga1.jpg"
+        "imgE/CCSS.png", "imgE/Segura.png"
     ],
     lanyards: [
         "imgE/gafete.png", "imgE/Cuello2.png", "imgE/Cro2.png",
@@ -50,8 +52,10 @@ const empresasData = {
         "imgE/botella1.jpg",
         "imgE/tumbler1.jpg"
     ],
-    llaveros: [
-        "imgE/Llaveros1.png", "imgE/Llaveros2.png"
+    placas_llaveros: [
+        "imgE/placa_Bomberos.png",
+        "imgE/Llaveros1.png", 
+        "imgE/Llaveros2.png"
     ],
     stickers_Accesorios: [
         "imgE/sticker.png", "imgE/estuche.png", "imgE/Mauspad1.png",
@@ -74,9 +78,7 @@ const empresasData = {
         "imgE/Sm13.png", "imgE/Sm14.png", "imgE/Sm15.png",
         "imgE/Sm16.png", "imgE/Sm17.png"
     ],
-    especiales_politica: [
-        "imgE/placa1.jpg",
-        "imgE/placa2.jpg",
+    campana: [
         "imgE/campana1.jpg",
         "imgE/campana2.jpg"
     ]
