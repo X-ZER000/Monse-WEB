@@ -161,3 +161,48 @@ document.addEventListener('keydown', function(e) {
         closeLightbox();
     }
 });
+
+// ------------------------------------
+// SEGURIDAD
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // 1. Bloquear el menú contextual (Clic derecho) - Funciona en todos (Mac, Linux, Windows)
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        alert('Contenido protegido. Las imágenes y recursos están bajo derechos de autor.');
+    });
+
+    // 2. Bloquear atajos de teclado (Compatible con Windows/Linux [Ctrl] y Mac [Command])
+    document.addEventListener('keydown', function(e) {
+        // Detectar tecla F12 (Inspeccionar)
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+
+        // Detectar si presiona Ctrl (Windows/Linux) o Command/Meta (Mac)
+        const isCtrlOrCmd = e.ctrlKey || e.metaKey;
+
+        if (isCtrlOrCmd) {
+            if (
+                e.key === 'c' || // Copiar (Ctrl+C / Cmd+C)
+                e.key === 's' || // Guardar página (Ctrl+S / Cmd+S)
+                e.key === 'p' || // Imprimir (Ctrl+P / Cmd+P)
+                e.key === 'u' || // Ver código fuente (Ctrl+U / Cmd+U)
+                (e.shiftKey && e.key === 'i') || // DevTools (Ctrl+Shift+I / Cmd+Shift+I)
+                (e.altKey && e.key === 'i')      // DevTools alternativo en Mac (Cmd+Option+I)
+            ) {
+                e.preventDefault();
+                alert('Acción deshabilitada para proteger el contenido de Monse WEB.');
+                return false;
+            }
+        }
+    });
+
+    // 3. Bloquear el arrastre de elementos e imágenes con el ratón - Funciona en todos
+    document.addEventListener('dragstart', function(e) {
+        if (e.target.nodeName === 'IMG') {
+            e.preventDefault();
+        }
+    });
+});
