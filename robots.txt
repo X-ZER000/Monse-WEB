@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /empresas/JSe/
+Disallow: /festividades/JSf/
+Disallow: /img/
+Disallow: /regalos/JSp/
+Disallow: /CATALOGO.pdf
+Disallow: /global.js
+Disallow: /visor.html
