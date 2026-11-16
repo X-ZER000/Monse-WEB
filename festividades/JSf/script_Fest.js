@@ -4,9 +4,9 @@
 
 // 1. Imágenes para el Carrusel Principal Superior (Subiendo un nivel con ../)
 const carouselFestImages = [
-    "imgF/Destacado1.png", "imgF/destacado2.png", "imgF/destacado3.png",
-    "imgF/Destacado4.png", "imgF/destacado5.png", "imgF/Destacado6.png",
-    "imgF/destacado7.png"
+    "imgF/Destacado1.png", "imgF/Destacado2.png", "imgF/Destacado3.png",
+    "imgF/Destacado4.png", "imgF/Destacado5.png", "imgF/Destacado6.png",
+    "imgF/Destacado7.png"
 ];
 
 // 2. Datos e imágenes para cada subcategoría (Subiendo un nivel con ../)
