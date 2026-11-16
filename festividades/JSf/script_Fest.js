@@ -12,10 +12,10 @@ const carouselFestImages = [
 // 2. Datos e imágenes para cada subcategoría (Subiendo un nivel con ../)
 const festividadesData = {
     cumpleanos: [
-        "imgF/Cumpleaños1.png", "imgF/Cumpleaños2.png", "imgF/Cumpleaños3.png",
-        "imgF/Cumpleaños4.png", "imgF/Cumpleaños5.png", "imgF/Cumpleaños6.png", 
-        "imgF/Cumpleaños7.png", "imgF/Cumpleaños8.png", "imgF/Cumpleaños9.png",
-        "imgF/Cumpleaños10.png"
+        "imgF/Cumpleanos1.png", "imgF/Cumpleanos2.png", "imgF/Cumpleanos3.png",
+        "imgF/Cumpleanos4.png", "imgF/Cumpleanos5.png", "imgF/Cumpleanos6.png", 
+        "imgF/Cumpleanos7.png", "imgF/Cumpleanos8.png", "imgF/Cumpleanos9.png",
+        "imgF/Cumpleanos10.png"
     ],
     graduaciones: [
         "imgF/Graduaciones17.png","imgF/Graduacion16.png", "imgF/graduaciones15.png",
