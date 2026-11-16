@@ -37,12 +37,12 @@ const festividadesData = {
         "imgF/Aniversarios4.png"
     ],
     conciertos: [
-        "imgF/conciertos1.png", "imgF/conciertos2.png", "imgF/conciertos3.png",
-        "imgF/conciertos4.png"
+        "imgF/Conciertos1.png", "imgF/Conciertos2.png", "imgF/Conciertos3.png",
+        "imgF/Conciertos4.png"
     ],
     festividades: [
-        "imgF/festividades1.png", "imgF/festividades2.png", "imgF/Festividades3.png",
-        "imgF/festividades4.png", "imgF/festividades5.png"
+        "imgF/Festividades1.png", "imgF/Festividades2.png", "imgF/Festividades3.png",
+        "imgF/Festividades4.png", "imgF/Festividades5.png"
     ],
     eventos: [
         "imgF/evento1.png", "imgF/evento2.png", "imgF/evento3.png",
