@@ -41,7 +41,7 @@ const festividadesData = {
         "imgF/conciertos4.png"
     ],
     festividades: [
-        "imgF/festividades1.png", "imgF/festividades2.png", "imgF/festividades3.png",
+        "imgF/festividades1.png", "imgF/festividades2.png", "imgF/Festividades3.png",
         "imgF/festividades4.png", "imgF/festividades5.png"
     ],
     eventos: [
@@ -54,10 +54,10 @@ const festividadesData = {
         "imgF/evento19.png"
     ],
     reuniones: [
-        "imgF/reuniones1.png", "imgF/reuniones2.png", "imgF/reuniones3.png",
-        "imgF/reuniones4.png", "imgF/reuniones5.png", "imgF/reuniones6.png",
-        "imgF/reuniones7.png", "imgF/reuniones8.png", "imgF/reuniones9.png",
-        "imgF/reuniones10.png"
+        "imgF/Reuniones1.png", "imgF/Reuniones2.png", "imgF/Reuniones3.png",
+        "imgF/Reuniones4.png", "imgF/Reuniones5.png", "imgF/Reuniones6.png",
+        "imgF/Reuniones7.png", "imgF/Reuniones8.png", "imgF/Reuniones9.png",
+        "imgF/Reuniones10.png"
     ],
     reconocimientos: [
         "imgF/Reconocimientos1.png", "imgF/Reconocimientos2.jpg", "imgF/Reconocimientos3.png",
