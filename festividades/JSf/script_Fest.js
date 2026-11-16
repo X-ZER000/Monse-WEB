@@ -9,6 +9,7 @@ const carouselFestImages = [
     "imgF/Destacado7.png"
 ];
 
+//Forzar
 // 2. Datos e imágenes para cada subcategoría (Subiendo un nivel con ../)
 const festividadesData = {
     cumpleanos: [
