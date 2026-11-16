@@ -19,7 +19,7 @@ const festividadesData = {
         "imgF/Cumpleanos10.png"
     ],
     graduaciones: [
-        "imgF/Graduaciones17.png","imgF/Graduacion16.png", "imgF/graduaciones15.png",
+        "imgF/Graduaciones17.png","imgF/Graduacion16.png", "imgF/Graduaciones15.png",
         "imgF/Graduaciones1.png", "imgF/Graduaciones2.png", "imgF/Graduaciones3.png",
         "imgF/Graduaciones4.png", "imgF/Graduaciones5.png", "imgF/Graduaciones6.png",
         "imgF/Graduaciones7.png", "imgF/Graduaciones8.png", "imgF/Graduaciones9.png",
