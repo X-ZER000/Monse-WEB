@@ -2,14 +2,15 @@
 // DATOS DEL PORTAFOLIO DE FESTIVIDADES Y ACTIVIDADES
 // ==========================================
 
-// 1. Imágenes para el Carrusel Principal Superior
+// 1. Imágenes para el Carrusel Principal Superior (Subiendo un nivel con ../)
 const carouselFestImages = [
     "imgF/Destacado1.png", "imgF/Destacado2.png", "imgF/Destacado3.png",
     "imgF/Destacado4.png", "imgF/Destacado5.png", "imgF/Destacado6.png",
     "imgF/Destacado7.png"
 ];
 
-// 2. Datos e imágenes para cada subcategoría
+//Forzar
+// 2. Datos e imágenes para cada subcategoría (Subiendo un nivel con ../)
 const festividadesData = {
     cumpleanos: [
         "imgF/Cumpleanos1.png", "imgF/Cumpleanos2.png", "imgF/Cumpleanos3.png",
@@ -18,7 +19,7 @@ const festividadesData = {
         "imgF/Cumpleanos10.png"
     ],
     graduaciones: [
-        "imgF/Graduaciones17.png", "imgF/Graduacion16.png", "imgF/Graduaciones15.png",
+        "imgF/Graduaciones17.png","imgF/Graduacion16.png", "imgF/Graduaciones15.png",
         "imgF/Graduaciones1.png", "imgF/Graduaciones2.png", "imgF/Graduaciones3.png",
         "imgF/Graduaciones4.png", "imgF/Graduaciones5.png", "imgF/Graduaciones6.png",
         "imgF/Graduaciones7.png", "imgF/Graduaciones8.png", "imgF/Graduaciones9.png",
@@ -75,6 +76,7 @@ const festividadesData = {
     ]
 };
 
+
 // ==========================================
 // FUNCIONES DE RENDERIZADO AUTOMÁTICO
 // ==========================================
@@ -83,22 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCarousel();
     renderAllCategories();
     initScrollButtons();
-    initLightboxEvents();
 });
-
-// Reintento automático si GitHub Pages limita peticiones (503)
-function attachRetryListener(imgElement) {
-    imgElement.addEventListener("error", function () {
-        const retries = parseInt(this.dataset.retries || "0", 10);
-        if (retries < 3) {
-            this.dataset.retries = retries + 1;
-            const originalSrc = this.getAttribute("src").split("?")[0];
-            setTimeout(() => {
-                this.src = `${originalSrc}?retry=${retries + 1}`;
-            }, 1200 * (retries + 1));
-        }
-    });
-}
 
 // Renderizar el Carrusel Superior
 function renderCarousel() {
@@ -107,38 +94,25 @@ function renderCarousel() {
 
     container.innerHTML = carouselFestImages.map((img, index) => `
         <div class="carousel-item ${index === 0 ? 'active' : ''}">
-            <img src="${img}" 
-                 class="d-block w-100 object-fit-cover lightbox-trigger" 
-                 style="height: 380px; cursor: pointer;" 
-                 alt="Destacado Festividad ${index + 1}">
+            <img src="${img}" class="d-block w-100 object-fit-cover" style="height: 380px; cursor: pointer;" alt="Destacado Festividad ${index + 1}" onclick="openLightbox('${img}')">
         </div>
     `).join('');
-
-    container.querySelectorAll("img").forEach(attachRetryListener);
 }
 
-// Renderizar todas las categorías de forma escalonada y sin lazy-loading horizontal
+// Renderizar todas las categorías dinámicamente
 function renderAllCategories() {
-    Object.entries(festividadesData).forEach(([key, images], categoryIndex) => {
-        setTimeout(() => {
-            const container = document.getElementById(`${key}-container`);
-            if (container) {
-                container.innerHTML = images.map((img, i) => `
-                    <div class="flex-shrink-0" style="width: 300px;">
-                        <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                            <img src="${img}" 
-                                 class="card-img-top object-fit-cover lightbox-trigger" 
-                                 style="height: 300px; cursor: pointer;" 
-                                 alt="${key} ${i + 1}" 
-                                 decoding="async">
-                        </div>
+    for (const [key, images] of Object.entries(festividadesData)) {
+        const container = document.getElementById(`${key}-container`);
+        if (container) {
+            container.innerHTML = images.map((img, i) => `
+                <div class="flex-shrink-0" style="width: 300px;">
+                    <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                        <img src="${img}" class="card-img-top object-fit-cover" style="height: 300px; cursor: pointer;" alt="${key} ${i + 1}" loading="lazy" onclick="openLightbox('${img}')">
                     </div>
-                `).join('');
-
-                container.querySelectorAll("img").forEach(attachRetryListener);
-            }
-        }, categoryIndex * 250);
-    });
+                </div>
+            `).join('');
+        }
+    }
 }
 
 // ==========================================
@@ -164,14 +138,6 @@ function initScrollButtons() {
 // ==========================================
 // FUNCIONES PARA EL LIGHTBOX (VISOR DE IMÁGENES)
 // ==========================================
-function initLightboxEvents() {
-    document.body.addEventListener("click", (e) => {
-        if (e.target.classList.contains("lightbox-trigger")) {
-            openLightbox(e.target.getAttribute("src").split("?")[0]);
-        }
-    });
-}
-
 function openLightbox(imageSrc) {
     const modal = document.getElementById('lightboxModal');
     const modalImg = document.getElementById('lightboxImg');
@@ -191,3 +157,4 @@ function closeLightbox(event) {
         }, 300);
     }
 }
+
